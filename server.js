@@ -10,7 +10,7 @@ const profilesRouter = require('./controllers/profiles');
 
 
 
-let PORT = 3000
+let PORT = process.env.PORT
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -31,6 +31,6 @@ app.use('/profiles', profilesRouter);
 
 
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log(`The express app is ready on http://localhost:${PORT}`);
 });
