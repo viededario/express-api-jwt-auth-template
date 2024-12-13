@@ -28,7 +28,9 @@ app.use('/test-jwt', testJWTRouter);
 app.use('/users', usersRouter);
 app.use('/profiles', profilesRouter);
 
-
+app.get('/',  (req, res) => {
+    res.json({"message": "Hello"})
+})
 
 
 app.listen(PORT, () => {
