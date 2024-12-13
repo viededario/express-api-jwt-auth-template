@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const testJWTRouter = require('./controllers/test-jwt');
 const usersRouter = require('./controllers/users');
 const profilesRouter = require('./controllers/profiles');
+const cors = require('cors');
 
 
 
@@ -19,6 +20,7 @@ mongoose.connection.on('connected', () => {
 });
 
 app.use(express.json());
+app.use(cors())
 
 
 // ... other middleware
